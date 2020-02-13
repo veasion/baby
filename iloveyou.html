@@ -281,27 +281,12 @@
       // 展示心
       Flowtime.toggleOverview(true);
 
-      // 一步步演示
 	  canClick = true;
-	  /*
-      setTimeout(function(){
-        Flowtime.toggleOverview(true);
-        $("#code").hide();
-        setTimeout(function(){
-          $("#thumb-page-0").trigger("click");
-          setTimeout(function(){
-            $("#thumb-page-0").trigger("click");
-            intTime = setInterval(function(){
-              Flowtime.next();
-              if(location.href.indexOf("section-9/page-4") != -1){
-                clearInterval(intTime);
-                canClick = true;
-              }
-            }, 2500);
-          }, 3000);
-        }, 100);
-      }, 6000);
-	  */
+	  
+	  setTimeout(function(){
+		$("#code").hide();
+        Flowtime.toggleOverview(false);
+      }, 2000);
 
       // 监听页面改变
       changePage = function(hash){
