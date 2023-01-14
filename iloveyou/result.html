@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>I love you</title>
+  <meta name="description" content="I love you" />
+  <link rel="Shortcut Icon" href="./favicon.ico" />
+  <link href="https://veasion-files.oss-cn-shanghai.aliyuncs.com/github/love/default.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="https://veasion-files.oss-cn-shanghai.aliyuncs.com/github/love/jquery.js"></script>
+  <script type="text/javascript" src="https://veasion-files.oss-cn-shanghai.aliyuncs.com/github/love/garden.js"></script>
+  <script type="text/javascript" src="https://veasion-files.oss-cn-shanghai.aliyuncs.com/github/love/functions.js"></script>
+  <script type="text/javascript" src="https://veasion-files.oss-cn-shanghai.aliyuncs.com/github/love/MouseClick.js"></script>
+  <script type="text/javascript" src="https://veasion-files.oss-cn-shanghai.aliyuncs.com/github/love/HuaMazz.js"></script>
+  <style>
+	body{overflow-x: hidden;}
+	.divcss5{width:0px;height:0px;line-height:0px; overflow:hidden;}
+	#love{text-align: center;position: absolute;display: none;}
+	</style>
+ </head>
+ <body>
+  &nbsp;&nbsp;
+  <!--
+  <span style="font-size:16px;color:#666;cursor: pointer;" title="I Love You ！" onclick="location.href='http://www.veasion.cn'" ontouchend="this.onclick();">Veasion</span>
+  -->
+  <div class="snow-container" id="huaMazz" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100;"></div>
+  <audio id="bgmMusic" src="https://veasion-files.oss-cn-shanghai.aliyuncs.com/github/love/bg.mp3" preload="auto" type="audio/mp3" autoplay="" loop=""></audio>
+  <div id="mainDiv">
+   <div id="content" style="width: 1110px; height: 625px; margin-top: 138px; margin-left: 405px;">
+    <div id="loveHeart">
+     <canvas id="garden" width="670" height="625"></canvas>
+     <div id="love" width="670" height="625">
+       <!--
+	   <h1><font size="7">LZW</font><font color="red" size="7"> ♥ </font><font size="7">LY</font></h1>
+	   <h2>I love you</h2>
+	   -->
+	   <h1><font id="_font" color="red" size="7">LZW ♥ LY</font></h1>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "提醒您：您的浏览器版本过旧^_^<br/>"+
+				"推荐使用谷歌浏览器</a><br/>请先升级您的浏览器，效果很炫哦~~";
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+			    $("#love").show();
+				startHeartAnimation();
+				var l = $("#loveHeart");
+				var y = l.offset().top + 180;
+				var x = l.offset().left + (l.width() - $("#love").width()) / 2;
+				$("#love").css({left: x,top: y});
+				print('I LOVE YOU');
+				setTimeout(function(){
+				  var system = {};
+				  var p = navigator.platform;
+				  system.win = p.indexOf("Win") == 0;
+				  system.mac = p.indexOf("Mac") == 0;
+				  system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+				  if((system.win||system.mac||system.xll) && $(window).width() > 600){
+					// 电脑访问，改变窗体大小
+					window.open(location.href.replace("/index.html", "").replace("/result.html", "") + "/iloveyou.html", "", "width=350,height=580");
+				  }else{
+					location.href = location.href.replace("/index.html", "").replace("/result.html", "") + "/iloveyou.html";
+				  }
+				}, 6000);
+			}, 1000);
+		}
+		
+		function print(str, ok) {
+			for (let i=0;i<str.length;i++){
+				setTimeout(function(){
+					document.getElementById("_font").innerHTML = str.substring(0, i+1);
+					if (ok && i>=str.length-1){
+						ok();
+					}
+				}, (i+1)*100);
+			}
+		}
+
+		document.addEventListener("WeixinJSBridgeReady", function () {
+			document.getElementById('bgmMusic').play();
+		}, false);
+		setTimeout(function(){
+		      document.getElementById('bgmMusic').play();
+		}, 200)
+	</script>
+  <div>
+  </div>
+ </body>
+<script type="text/javascript" charset="utf-8"  src="https://veasion.oss-cn-shanghai.aliyuncs.com/other/L2Dwidget.0.min.js"></script>
+<script type="text/javascript" charset="utf-8"  src="https://veasion.oss-cn-shanghai.aliyuncs.com/other/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+L2Dwidget.init({
+  "display": {
+    "superSample": 2,
+    "width": 200,
+    "height": 400,
+    "position": "left",
+    "hOffset": 0,
+    "vOffset": 0
+  }
+});
+</script>
+</html>
